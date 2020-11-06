@@ -603,6 +603,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
 #header .logo svg, #header .logo img {
   /*height: 42px;*/
   display: inherit;
+  filter: drop-shadow(1px 1px 2px white) drop-shadow(-1px -1px 2px white) drop-shadow(1px -1px 2px white) drop-shadow(-1px 1px 2px white) drop-shadow(1px 0px 2px white);
 }
 .header-fixed #header {
   position: fixed;

@@ -6,6 +6,7 @@
     {{ page.content|raw }}
     
       {% for p in page.collection %}
+          
            <h2 class="text-primary">{{p.title}}</h2>
          {{p.content|raw}}
       {% endfor %}

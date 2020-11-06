@@ -64,6 +64,15 @@
       /*height: 42px;*/
       display: inherit;
       @extend .default-animation;
+      filter:  
+        drop-shadow(1px 1px 2px white)
+        drop-shadow(-1px -1px 2px white)
+        drop-shadow(1px -1px 2px white)
+        drop-shadow(-1px 1px 2px white)
+        drop-shadow(1px 0px 2px white) 
+        /*drop-shadow(-1px 0px 2px white)  
+        drop-shadow(0px 1px 2px white) 
+        drop-shadow(0px -1px 2px white)*/;
     }
   }
 
