@@ -1,0 +1,17 @@
+{#{{dump(theme_var(mobile ? 'custom_logo_mobile' : 'custom_logo'))}}#}
+{% set logo = theme_var(mobile ? 'custom_logo_mobile' : 'custom_logo') %}
+{#{{dump(mobile)}}#}
+<a href="{{ home_url }}" class="navbar-brand mr-10">  
+
+{% if logo %}
+{% set logo_file = (logo|first).name %}
+{% set logo_path = url('theme://images/logo/' ~ logo_file) %}
+  {{dump(logo_path )}}
+{#  {{dump(url('theme://images/logo/' ~ logo_file) )}}#}
+  <img src="/user/themes/quark-open-publishing/images/logo/tv_logo_mini_bk.png" alt="{{ site.title }}" />
+{% else %}
+    {% set logo_file = (logo|first).name %}
+    <img src="/user/themes/quark-open-publishing/images/logo/tv_logo_mini_bk.png" alt="{{ site.title }}" />
+{#  {% include('@images/grav-logo.svg') %}#}
+{% endif %}
+</a>
