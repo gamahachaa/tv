@@ -7,7 +7,7 @@
 {% else %}
     {% set show_breadcrumbs = true %}
 {% endif %}
-{% if page.header.sidebar.show defined %}
+{% if page.header.sidebar.show is defined %}
     {% set show_sidebar = page.header.sidebar.show %}
 {% else %}
     {% set show_sidebar = true %}
