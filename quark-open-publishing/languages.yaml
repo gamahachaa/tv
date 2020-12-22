@@ -41,6 +41,8 @@ de:
                 HEADLINE: Text Widget Beispiel
             POPULAR_TAGS:
                 HEADLINE: Häufigste Tags
+            POPULAR_INGREDIENS:
+                HEADLINE: Zutaten                
             ARCHIVES:
                 HEADLINE: Archiv
             SYNDICATE:
@@ -90,6 +92,8 @@ fr:
                 HEADLINE: Du texte gadget
             POPULAR_TAGS:
                 HEADLINE: Tags populaires
+            POPULAR_INGREDIENS:
+                HEADLINE: Ingrédients
             ARCHIVES:
                 HEADLINE: Archives
             SYNDICATE:
