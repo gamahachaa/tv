@@ -1,7 +1,21 @@
-{% if page.taxonomy.tag %}
+{#{% if page.taxonomy.tag %}
 <span class="tags">
     {% for tag in page.taxonomy.tag %}
     <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
     {% endfor %}
+    
 </span>
-{% endif %}
+{% endif %}#}
+
+
+ {% for k, v  in page.taxonomy%}
+     {%if k == 'category' or 'archives' in k%}
+     {% else %}
+         <span class="tags" id="{{k}}">
+             {% for tag in v %}
+                <a class="label label-rounded {{ label_style ?: 'label-secondary' }} p-category" href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+         </span>    
+    {% endif %}
+   
+{% endfor %}
