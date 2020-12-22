@@ -4,7 +4,25 @@
 {% set sidebar_page = pages.find('/sidebar') %}
 {% set sidebar_page_content =  sidebar_page.content %}
 
-{% if config.plugins.simplesearch.enabled %}
+{% if page.header.sidebar.archives.show is defined %}
+    {% set show_archives = page.header.sidebar.archives.show %}
+{% else %}
+    {% set show_archives = true %}
+{% endif %}
+
+{% if page.header.sidebar.archives.show is defined %}
+    {% set show_search = page.header.sidebar.search.show %}
+{% else %}
+    {% set show_search = true %}
+{% endif %}
+
+{% if page.header.sidebar.feeds.show is defined %}
+    {% set show_feed = page.header.sidebar.feeds.show %}
+{% else %}
+    {% set show_feed = true %}
+{% endif %}
+
+{% if config.plugins.simplesearch.enabled and show_search %}
     <div class="sidebar-content">
         {% include 'partials/simplesearch_searchbox.html.twig' %}
     </div>
@@ -32,8 +50,8 @@
         <a class="button" href="{{ base_url }}/random"><i class="fa fa-retweet"></i> {{ 'THEME_QUARK.SIDEBAR.RANDOM_ARTICLE.FEELING_LUCKY'|t }}</a>
     </div>
 {% endif %}
-{% if page.header.taxonomylist.show is defined %}
-    {% set show_taxo = page.header.taxonomylist.show %}
+{% if page.header.sidebar.taxonomylist.show is defined %}
+    {% set show_taxo = page.header.sidebar.taxonomylist.show %}
 {% else %}
     {% set show_taxo = 'tag' %}
 {% endif %}
@@ -48,7 +66,7 @@
         {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy': show_taxo} %}
     </div>
 {% endif %}
-{% if config.plugins.archives.enabled %}
+{% if config.plugins.archives.enabled and show_archives%}
     <div class="sidebar-content">
         <h4>{{ 'THEME_QUARK.SIDEBAR.ARCHIVES.HEADLINE'|t }}</h4>
         {% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
@@ -64,7 +82,7 @@
     {% endif %}
 {% endif %}
 
-{% if config.plugins.feed.enabled %}
+{% if config.plugins.feed.enabled and show_feed %}
     <div class="sidebar-content syndicate">
         <h4>{{ 'THEME_QUARK.SIDEBAR.SYNDICATE.HEADLINE'|t }}</h4>
         <a class="btn" href="{{ feed_url }}.atom">
