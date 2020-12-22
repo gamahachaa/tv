@@ -7,8 +7,8 @@
 {% else %}
     {% set show_breadcrumbs = true %}
 {% endif %}
-{% if page.header.show_sidebar is defined %}
-    {% set show_sidebar = page.header.show_sidebar %}
+{% if page.header.sidebar.show defined %}
+    {% set show_sidebar = page.header.sidebar.show %}
 {% else %}
     {% set show_sidebar = true %}
 {% endif %}
@@ -17,6 +17,7 @@
 {% else %}
     {% set show_pagination = true %}
 {% endif %}
+
 
 {% block stylesheets %}
     {% do assets.addCss('theme://css/bricklayer.css') %}
