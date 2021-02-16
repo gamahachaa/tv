@@ -3,6 +3,8 @@
   {% for p in page.children.visible %}
     {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
     <li>
+    {{dump(p.menu)}}
+    {{dump(p.routable}}
       <a href="{% if p.routable %}{{ p.url }}{% else %}#{% endif %}" class="{{ active_page }}">
         {{ p.menu }}
       </a>
