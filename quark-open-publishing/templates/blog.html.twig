@@ -56,7 +56,7 @@
               {% if page.collection('modular_content') is not empty %}
               {% for module in page.collection('modular_content') %}
                 {% if (module.content|striptags)|trim %}
-                  <p>{{ module.content|raw }}</p>
+                  <p>{{ module.content }}</p>
                 {% else %}
                      <p>{{ module.content }}</p>
                 {% endif %}
