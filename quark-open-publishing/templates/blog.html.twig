@@ -57,6 +57,8 @@
               {% for module in page.collection('modular_content') %}
                 {% if (module.content|striptags)|trim %}
                   <p>{{ module.content|raw }}</p>
+                {% else %}
+                     <p>{{ module.content }}</p>
                 {% endif %}
               {% endfor %}
             {% endif %}
