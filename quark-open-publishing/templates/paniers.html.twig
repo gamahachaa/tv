@@ -1,0 +1,93 @@
+{% extends 'partials/base.html.twig' %}
+
+{% if page.parent.parent.header.hide_next_prev_page_buttons is defined %}
+    {% set hide_next_prev_page_buttons = page.parent.parent.header.hide_next_prev_page_buttons %}
+{% elseif page.parent.header.hide_next_prev_page_buttons is defined %}
+    {% set hide_next_prev_page_buttons = page.parent.header.hide_next_prev_page_buttons %}
+{% endif %}
+
+{% block content %}
+
+    {% set activetag = uri.param('filter') %}
+
+    <div class="columns">
+
+        <div id="sections-content" class="column col-9 col-md-12">
+
+            {% if not(page.header.hide_page_title) and not(grav.uri.param('hidepagetitle')) %}
+                <h2 class="sections-page-title-template">{{ page.title }}</h2>
+            {% endif %}
+
+            {{ page.content|raw }}
+
+            {% if page.collection('modular_content') is not empty %}
+                {#                 <h1>MODULES</h1>#}
+                {% for module in page.collection('modular_content') %}
+                    {#                    {{dump(module)}}#}
+                    {% if (module.content|striptags)|trim %}
+                        <p>{{ module.content }}</p>
+                    {% else %}
+                        <p>{{ module.content }}</p>
+                    {% endif %}
+                {% endfor %}
+                <script>
+                    $(document).ready(function () {
+                        $('#mini').DataTable({
+                            "dom": 'rtiB',
+                            "buttons": ['print'],
+                            "order": [[4, 'desc']],
+                            "paging": false,
+                            "info": false,
+                            "searching": true,
+                            "responsive": true,
+                            "class":"stripe",
+                            "columnDefs": [
+                                {
+                                    "targets": [5],
+                                    "visible": false,
+                                    "searchable": false
+                                },
+                            {
+                                    "targets": [4],
+                                    "visible": false,
+                                    "searchable": true
+                                }]
+                        });
+                        var table = $('#mini').DataTable();
+                        $('#minibtn').click( function () {
+{#                            table.column(4).search($(this).text());#}
+        console.log("Mini");
+                            table.column(4).search("Mini").draw();
+                            removeAll($(this));
+{#                            $(this).toggleClass("btn-primary");#}
+                        });
+                        $('#pitibtn').click( function () {
+{#                            table.column(4).search($(this).text());#}
+                            table.column(4).search("Kleiner / Petit").draw();
+                            removeAll($(this));
+                        });
+                        $('#grobtn').click( function () {
+{#                            table.column(4).search($(this).text());#}
+                            table.column(4).search("Grosser / Grand").draw();
+                            removeAll($(this));
+                        });
+                        table.column(4).search("Grosser / Grand").draw();
+                        function removeAll(btn)
+                        {
+                            $('#minibtn').removeClass("btn-primary");
+                            $('#pitibtn').removeClass("btn-primary");
+                            $('#grobtn').removeClass("btn-primary");
+                            btn.toggleClass("btn-primary");
+                        }
+                    });
+                </script>
+            {%else%}
+                <h1>EMPTY</h1>
+            {% endif %}
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
