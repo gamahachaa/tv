@@ -32,7 +32,7 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
-                        console.log("start");
+                        
                         $('#mini').DataTable({
                             colReorder: true,
                             "dom": 'rtiB',
@@ -55,9 +55,9 @@
                                     "searchable": false
                                 }]
                         });
-                        console.log("wtf");
+                       
                         var table = $('#mini').DataTable();
-                        console.log("wtf");
+                       
                         $('#minibtn').click( function () {
 {#                            table.column(4).search($(this).text());#}
         console.log("Mini");
@@ -83,6 +83,13 @@
                         table.colReorder.move( 0, 2, false );
                         table.colReorder.move( 1, 4, false );
                         table.column(4).search("Gross/Grand").draw();
+                        // table.column(1).header().text("TEST");
+                        var what = table.column(0).header();
+                        var qtity = table.column(1).header();
+                        var qtity = table.column(2).header();
+                        $(what).html("Was / Quoi ?");
+                        $(qtity).html("Wie Viel / Combien ?");
+                        $(qtity).html("Vom Wem / De qui ?");
                         function removeAll(btn)
                         {
                             $('#minibtn').removeClass("btn-primary");
