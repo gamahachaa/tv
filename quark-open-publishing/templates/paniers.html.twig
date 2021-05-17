@@ -32,7 +32,8 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
-
+                        var tableTitle = $('h3').text();
+                        var printTitle = "";
                         $('#mini').DataTable({
                             colReorder: true,
                             "dom": 'rtiB',
@@ -43,18 +44,22 @@
                                         $(win.document.body)
                                                 .css('font-size', '10pt')
                                                 .prepend(
-                                                        '<img src="https://test.terrevision.ch/user/themes/quark-open-publishing/images/logo/tv_logo_mini_bk.png" style="position:absolute; top:0; right:0;" />'
+                                                        '<img src="{{ uri.base()}}{{ theme_url }}/images/logo/tv_logo_mini_bk.png" style="position:absolute; top:0; right:0;" />'
                                                         );
 
                                         /*$(win.document.body).find('table')
-                                                .addClass('compact')
-                                                .css('font-size', 'inherit');*/
+                                         .addClass('compact')
+                                         .css('font-size', 'inherit');*/
                                         $(win.document.body).find(".odd").css("background-color", 0);
                                         var t = $(win.document.body).find("table tbody tr:nth-child(odd)");
-{#                                        $("table tbody tr:nth-child(odd)").css("background-color", "yellow");#}
+                    {#                                        $("table tbody tr:nth-child(odd)").css("background-color", "yellow");#}
                                         t.css("background-color", "beige");
-{#                                        $(t).css("background-color", "yellow");#}
+                    {#                                        $(t).css("background-color", "yellow");#}
                                         //console.log( $(".odd").css("background-color", "yellow"));
+                                    },
+                                    "title": function () {
+                                        var printTit = printTitle + "<br/><small>" + tableTitle +"</small>";
+                                        return printTit;
                                     }
                                 }
                             ],
@@ -81,44 +86,48 @@
 
                         $('#minibtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
-                            console.log("Mini");
 
-                            table.column(4).search("Mini").draw();
-                            removeAll($(this));
+
+                                table.column(4).search("Mini").draw();
+                                 printTitle = "Mini";
+                                removeAll($(this));
                     {#                            $(this).toggleClass("btn-primary");#}
-                        });
-                        $('#pitibtn').click(function () {
+                            });
+                            $('#pitibtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
-                            table.column(4).search("Klein/Petit").draw();
-                            removeAll($(this));
-                        });
-                        $('#grobtn').click(function () {
+                                table.column(4).search("Klein/Petit").draw();
+                                printTitle = "Klein/Petit";
+                                removeAll($(this));
+                            });
+                            $('#grobtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
+                                table.column(4).search("Gross/Grand").draw();
+                                printTitle = "Gross/Grand";
+                                removeAll($(this));
+                            });
+
+
+                            table.colReorder.move(0, 4, false);
+                            table.colReorder.move(0, 3, false);
+                            table.colReorder.move(0, 2, false);
+                            table.colReorder.move(1, 4, false);
                             table.column(4).search("Gross/Grand").draw();
-                            removeAll($(this));
+                            printTitle = "Gross/Grand";
+                            // table.column(1).header().text("TEST");
+                            var what = table.column(0).header();
+                            var qtity = table.column(1).header();
+                            var prod = table.column(2).header();
+                            $(what).html("Was / Quoi ?");
+                            $(qtity).html("Wie Viel / Combien ?");
+                            $(prod).html("Vom Wem / De qui ?");
+                            function removeAll(btn)
+                            {
+                                $('#minibtn').removeClass("btn-primary");
+                                $('#pitibtn').removeClass("btn-primary");
+                                $('#grobtn').removeClass("btn-primary");
+                                btn.toggleClass("btn-primary");
+                            }
                         });
-
-
-                        table.colReorder.move(0, 4, false);
-                        table.colReorder.move(0, 3, false);
-                        table.colReorder.move(0, 2, false);
-                        table.colReorder.move(1, 4, false);
-                        table.column(4).search("Gross/Grand").draw();
-                        // table.column(1).header().text("TEST");
-                        var what = table.column(0).header();
-                        var qtity = table.column(1).header();
-                        var prod = table.column(2).header();
-                        $(what).html("Was / Quoi ?");
-                        $(qtity).html("Wie Viel / Combien ?");
-                        $(prod).html("Vom Wem / De qui ?");
-                        function removeAll(btn)
-                        {
-                            $('#minibtn').removeClass("btn-primary");
-                            $('#pitibtn').removeClass("btn-primary");
-                            $('#grobtn').removeClass("btn-primary");
-                            btn.toggleClass("btn-primary");
-                        }
-                    });
                 </script>
             {%else%}
                 <h1>EMPTY</h1>
