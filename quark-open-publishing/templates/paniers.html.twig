@@ -32,56 +32,77 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
-                        
+
                         $('#mini').DataTable({
                             colReorder: true,
                             "dom": 'rtiB',
-                            "buttons": ['print'],
+                            "buttons": [
+                                {
+                                    "extend": 'print',
+                                    "customize": function (win) {
+                                        /*$(win.document.body)
+                                                .css('font-size', '10pt')
+                                                .prepend(
+                                                        '<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />'
+                                                        );
+
+                                        $(win.document.body).find('table')
+                                                .addClass('compact')
+                                                .css('font-size', 'inherit');*/
+                                        $(win.document.body).find(".odd").css("background-color", 0);
+                                        var t = $(win.document.body).find("table tbody tr:nth-child(odd)");
+{#                                        $("table tbody tr:nth-child(odd)").css("background-color", "yellow");#}
+                                        t.css("background-color", "beige");
+{#                                        $(t).css("background-color", "yellow");#}
+                                        //console.log( $(".odd").css("background-color", "yellow"));
+                                    }
+                                }
+                            ],
                             "order": [[4, 'desc']],
                             "paging": false,
                             "info": false,
                             "searching": true,
                             "responsive": true,
-                            "class":"stripe",
+                            "class": "stripe",
                             "columnDefs": [
                                 {
                                     "targets": [4],
                                     "visible": false,
                                     "searchable": true
                                 },
-                            {
+                                {
                                     "targets": [0],
                                     "visible": false,
                                     "searchable": false
                                 }]
                         });
-                       
+
                         var table = $('#mini').DataTable();
-                       
-                        $('#minibtn').click( function () {
-{#                            table.column(4).search($(this).text());#}
-        console.log("Mini");
-                            
+
+                        $('#minibtn').click(function () {
+                    {#                            table.column(4).search($(this).text());#}
+                            console.log("Mini");
+
                             table.column(4).search("Mini").draw();
                             removeAll($(this));
-{#                            $(this).toggleClass("btn-primary");#}
+                    {#                            $(this).toggleClass("btn-primary");#}
                         });
-                        $('#pitibtn').click( function () {
-{#                            table.column(4).search($(this).text());#}
+                        $('#pitibtn').click(function () {
+                    {#                            table.column(4).search($(this).text());#}
                             table.column(4).search("Klein/Petit").draw();
                             removeAll($(this));
                         });
-                        $('#grobtn').click( function () {
-{#                            table.column(4).search($(this).text());#}
+                        $('#grobtn').click(function () {
+                    {#                            table.column(4).search($(this).text());#}
                             table.column(4).search("Gross/Grand").draw();
                             removeAll($(this));
                         });
-                        
-                        
-                        table.colReorder.move( 0, 4, false );
-                        table.colReorder.move( 0, 3, false );
-                        table.colReorder.move( 0, 2, false );
-                        table.colReorder.move( 1, 4, false );
+
+
+                        table.colReorder.move(0, 4, false);
+                        table.colReorder.move(0, 3, false);
+                        table.colReorder.move(0, 2, false);
+                        table.colReorder.move(1, 4, false);
                         table.column(4).search("Gross/Grand").draw();
                         // table.column(1).header().text("TEST");
                         var what = table.column(0).header();
