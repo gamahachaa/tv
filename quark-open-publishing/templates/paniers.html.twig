@@ -32,7 +32,9 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
+                        console.log("start");
                         $('#mini').DataTable({
+                            colReorder: true,
                             "dom": 'rtiB',
                             "buttons": ['print'],
                             "order": [[4, 'desc']],
@@ -43,35 +45,44 @@
                             "class":"stripe",
                             "columnDefs": [
                                 {
-                                    "targets": [5],
-                                    "visible": false,
-                                    "searchable": false
-                                },
-                            {
                                     "targets": [4],
                                     "visible": false,
                                     "searchable": true
+                                },
+                            {
+                                    "targets": [0],
+                                    "visible": false,
+                                    "searchable": false
                                 }]
                         });
+                        console.log("wtf");
                         var table = $('#mini').DataTable();
+                        console.log("wtf");
                         $('#minibtn').click( function () {
 {#                            table.column(4).search($(this).text());#}
         console.log("Mini");
+                            
                             table.column(4).search("Mini").draw();
                             removeAll($(this));
 {#                            $(this).toggleClass("btn-primary");#}
                         });
                         $('#pitibtn').click( function () {
 {#                            table.column(4).search($(this).text());#}
-                            table.column(4).search("Kleiner / Petit").draw();
+                            table.column(4).search("Klein/Petit").draw();
                             removeAll($(this));
                         });
                         $('#grobtn').click( function () {
 {#                            table.column(4).search($(this).text());#}
-                            table.column(4).search("Grosser / Grand").draw();
+                            table.column(4).search("Gross/Grand").draw();
                             removeAll($(this));
                         });
-                        table.column(4).search("Grosser / Grand").draw();
+                        
+                        
+                        table.colReorder.move( 0, 4, false );
+                        table.colReorder.move( 0, 3, false );
+                        table.colReorder.move( 0, 2, false );
+                        table.colReorder.move( 1, 4, false );
+                        table.column(4).search("Gross/Grand").draw();
                         function removeAll(btn)
                         {
                             $('#minibtn').removeClass("btn-primary");
