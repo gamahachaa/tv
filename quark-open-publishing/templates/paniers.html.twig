@@ -32,9 +32,10 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
+                        var aboCol = 4;
                         var tableTitle = $('h3').text();
                         var printTitle = "";
-                        $('#mini').DataTable({
+                        $('#korb').DataTable({
                             colReorder: true,
                             "dom": 'rtiB',
                             "buttons": [
@@ -63,7 +64,7 @@
                                     }
                                 }
                             ],
-                            "order": [[4, 'desc']],
+                            "order": [[1, 'asc']],
                             "paging": false,
                             "info": false,
                             "searching": true,
@@ -71,7 +72,7 @@
                             "class": "stripe",
                             "columnDefs": [
                                 {
-                                    "targets": [4],
+                                    "targets": [3],
                                     "visible": false,
                                     "searchable": true
                                 },
@@ -82,36 +83,38 @@
                                 }]
                         });
 
-                        var table = $('#mini').DataTable();
+                        var table = $('#korb').DataTable();
 
                         $('#minibtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
 
 
-                                table.column(4).search("Mini").draw();
+                                table.column(aboCol).search("Mini").draw();
                                  printTitle = "Mini";
                                 removeAll($(this));
                     {#                            $(this).toggleClass("btn-primary");#}
                             });
                             $('#pitibtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
-                                table.column(4).search("Klein/Petit").draw();
+                                table.column(aboCol).search("Klein/Petit").draw();
                                 printTitle = "Klein/Petit";
                                 removeAll($(this));
                             });
                             $('#grobtn').click(function () {
                     {#                            table.column(4).search($(this).text());#}
-                                table.column(4).search("Gross/Grand").draw();
+                                table.column(aboCol).search("Gross/Grand").draw();
                                 printTitle = "Gross/Grand";
                                 removeAll($(this));
                             });
 
 
-                            table.colReorder.move(0, 4, false);
-                            table.colReorder.move(0, 3, false);
-                            table.colReorder.move(0, 2, false);
-                            table.colReorder.move(1, 4, false);
-                            table.column(4).search("Gross/Grand").draw();
+                            table.colReorder.move(0, 4, false);// move prix to 4
+                            table.colReorder.move(0, 2, false);// moproducteurs (name to 3)
+                            table.colReorder.move(3,0,false);// move product to 0
+                            table.colReorder.move(2,4,false);// move product to 0
+                          {#  table.colReorder.move(0, 2, false);// move quantity to 2
+                            table.colReorder.move(1, 4, false);// move abo to 4#}
+                            table.column(aboCol).search("Gross/Grand").draw();
                             printTitle = "Gross/Grand";
                             // table.column(1).header().text("TEST");
                             var what = table.column(0).header();
