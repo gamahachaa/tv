@@ -17,7 +17,24 @@ form {
       border: none;
     }
   }
-
+  .form-input{
+      &.x-small{
+          width:100%;
+      }
+      &.small{
+          width:100%;
+      }
+      &.medium{
+          width:50%;
+      }
+      &.long{
+          width:100%;
+      }
+      &.large{
+          width:100%;
+          height:4rem;
+      }
+  }
   /** Reset some defaults for Quark Theme **/
   .form-group:not(.form-field-toggleable) {
     .checkboxes {
