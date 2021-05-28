@@ -19,16 +19,16 @@ form {
   }
   .form-input{
       &.x-small{
-          width:10%;
-      }
-      &.small{
           width:25%;
       }
+      &.small{
+          width:33%;
+      }
       &.medium{
-          width:50%;
+          width:66%;
       }
       &.long{
-          width:100%;
+          width:90%;
       }
       &.large{
           width:100%;

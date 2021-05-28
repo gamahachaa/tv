@@ -289,16 +289,16 @@ form .form-input[type=range]:focus {
   border: none;
 }
 form .form-input.x-small {
-  width: 10%;
-}
-form .form-input.small {
   width: 25%;
 }
+form .form-input.small {
+  width: 33%;
+}
 form .form-input.medium {
-  width: 50%;
+  width: 66%;
 }
 form .form-input.long {
-  width: 100%;
+  width: 90%;
 }
 form .form-input.large {
   width: 100%;
