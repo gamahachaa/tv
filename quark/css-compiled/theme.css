@@ -505,6 +505,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   line-height: 1rem;
   padding-left: 5px;
   float: left;
+  background-color: #959c26;
 }
 .treemenu .toggler:before {
   display: inline-block;
