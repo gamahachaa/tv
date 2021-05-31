@@ -985,7 +985,7 @@ and open the template in the editor.
   border-bottom: none !important;
 }
 
-.card-image a {
+.card-image > a {
   border-bottom: 0px !important;
   border-bottom: none !important;
 }
