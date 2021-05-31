@@ -1355,6 +1355,9 @@ input:disabled + .form-icon, input.disabled + .form-icon {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
+.label.label-rounded a {
+  border-bottom: none !important;
+}
 .label a {
   border-bottom: none !important;
 }

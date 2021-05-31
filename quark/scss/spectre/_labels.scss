@@ -8,10 +8,13 @@
   &.label-rounded {
     border-radius: 5rem;
     padding-left: .4rem;
-    padding-right: .4rem; 
+    padding-right: .4rem;
+    a{
+       border-bottom: 0px !important;
+   }
   }
   a{
-      border-bottom: none !important;
+      border-bottom: 0px !important;
   }
 
   // Label colors
