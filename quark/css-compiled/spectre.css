@@ -450,6 +450,7 @@ body {
 
 a {
   color: #8db215;
+  border-bottom: 1px dashed #8db215;
   outline: none;
   text-decoration: none;
 }
@@ -457,11 +458,13 @@ a:focus {
   box-shadow: 0 0 0 0.1rem rgba(141, 178, 21, 0.2);
 }
 a:focus, a:hover, a:active, a.active {
-  color: #698410;
+  color: #b1e01a;
   text-decoration: underline;
+  border-bottom: none;
 }
 a:visited {
-  color: #b1e01a;
+  border-bottom: 1px dashed #698410;
+  color: #698410;
 }
 
 h1,

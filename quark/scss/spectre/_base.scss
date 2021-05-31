@@ -23,6 +23,7 @@ body {
 
 a {
   color: $link-color;
+  border-bottom: 1px dashed $link-color;
   outline: none;
   text-decoration: none;
 
@@ -34,11 +35,13 @@ a {
   &:hover,
   &:active,
   &.active {
-    color: $link-color-dark;
+    color: $link-color-light;
     text-decoration: underline;
+   border-bottom: none;
   }
 
   &:visited {
-    color: $link-color-light;
+    border-bottom: 1px dashed $link-color-dark;
+    color: $link-color-dark;
   }
 }
