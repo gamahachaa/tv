@@ -1356,7 +1356,7 @@ input:disabled + .form-icon, input.disabled + .form-icon {
   padding-right: 0.4rem;
 }
 .label a {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 .label.label-primary {
   background: #8db215;
