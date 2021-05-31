@@ -980,7 +980,7 @@ and open the template in the editor.
   background-color: beige;
 }
 
-.card a, .tags a {
+.tags a {
   border-bottom: 0px !important;
   border-bottom: none !important;
 }
