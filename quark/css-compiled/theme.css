@@ -496,7 +496,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   text-decoration: none;
 }
 .treemenu ul {
-  margin: 0 0 0 1rem;
+  /*margin: 0 0 0 1rem;*/
 }
 .treemenu .toggler {
   cursor: pointer;
@@ -986,6 +986,11 @@ and open the template in the editor.
 }
 
 .card-image > a {
+  border-bottom: 0px !important;
+  border-bottom: none !important;
+}
+
+.treemenu a {
   border-bottom: 0px !important;
   border-bottom: none !important;
 }
