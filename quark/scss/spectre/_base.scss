@@ -36,8 +36,8 @@ a {
   &:active,
   &.active {
     color: $link-color-light;
-    text-decoration: underline;
-   border-bottom: none;
+   /* text-decoration: underline;*/
+    border-bottom: 1px solid $link-color;
   }
 
   &:visited {
