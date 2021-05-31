@@ -1355,6 +1355,9 @@ input:disabled + .form-icon, input.disabled + .form-icon {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
+.label a {
+  border-bottom: none;
+}
 .label.label-primary {
   background: #5755d9;
   color: #fff;
@@ -2024,6 +2027,9 @@ video.video-responsive::before {
 .navbar .navbar-brand {
   font-size: 0.9rem;
   text-decoration: none;
+}
+.navbar a {
+  border-bottom: none;
 }
 
 .accordion input:checked ~ .accordion-header .icon, .accordion[open] .accordion-header .icon {
