@@ -30,3 +30,10 @@ and open the template in the editor.
     border-bottom: 0px !important;
        border-bottom: none !important;
 }
+.overlay.open{
+    .mobile-logo{
+        a{
+            border-bottom: none;
+        }
+    }
+}

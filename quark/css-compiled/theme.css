@@ -995,4 +995,8 @@ and open the template in the editor.
   border-bottom: none !important;
 }
 
+.overlay.open .mobile-logo a {
+  border-bottom: none;
+}
+
 /*# sourceMappingURL=theme.css.map */
