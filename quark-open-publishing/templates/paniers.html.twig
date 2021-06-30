@@ -83,22 +83,20 @@
                         var table = $('#korb').DataTable();
 
                         $('#minibtn').click(function () {
-                    {#                            table.column(4).search($(this).text());#}
-
-
+                   
                                 table.column(aboCol).search("Mini").draw();
                                  printTitle = "Mini";
                                 removeAll($(this));
-                    {#                            $(this).toggleClass("btn-primary");#}
+                    
                             });
                             $('#pitibtn').click(function () {
-                    {#                            table.column(4).search($(this).text());#}
+                    
                                 table.column(aboCol).search("Klein/Petit").draw();
                                 printTitle = "Klein/Petit";
                                 removeAll($(this));
                             });
                             $('#grobtn').click(function () {
-                    {#                            table.column(4).search($(this).text());#}
+                    
                                 table.column(aboCol).search("Gross/Grand").draw();
                                 printTitle = "Gross/Grand";
                                 removeAll($(this));
@@ -109,11 +107,10 @@
                             table.colReorder.move(0, 2, false);// moproducteurs (name to 3)
                             table.colReorder.move(3,0,false);// move product to 0
                             table.colReorder.move(2,4,false);// move product to 0
-                          {#  table.colReorder.move(0, 2, false);// move quantity to 2
-                            table.colReorder.move(1, 4, false);// move abo to 4#}
+                          
                             table.column(aboCol).search("Gross/Grand").draw();
                             printTitle = "Gross/Grand";
-                            // table.column(1).header().text("TEST");
+                            
                             var what = table.column(0).header();
                             var qtity = table.column(1).header();
                             var prod = table.column(2).header();
