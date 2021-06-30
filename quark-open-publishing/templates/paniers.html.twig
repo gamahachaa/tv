@@ -32,7 +32,8 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
-                        console.log(Cookies.get("korb"));
+                        var cookie = Cookies.get("korb");
+                        console.log(cookie);
                         var aboCol = 4;
                         var tableTitle = $('h3').text();
                         var printTitle = "";
@@ -84,23 +85,27 @@
                         var table = $('#korb').DataTable();
 
                         $('#minibtn').click(function () {
-                   
+                                onBtnClick($(this));
+                                /*
                                 table.column(aboCol).search("Mini").draw();
                                  printTitle = "Mini";
                                 removeAll($(this));
-                    
+                                */
                             });
                             $('#pitibtn').click(function () {
                     
+                                onBtnClick($(this));
+                                /*
                                 table.column(aboCol).search("Klein/Petit").draw();
                                 printTitle = "Klein/Petit";
                                 removeAll($(this));
+                                */
                             });
                             $('#grobtn').click(function () {
-                    
-                                table.column(aboCol).search("Gross/Grand").draw();
+                                onBtnClick($(this));
+                                /*table.column(aboCol).search("Gross/Grand").draw();
                                 printTitle = "Gross/Grand";
-                                removeAll($(this));
+                                removeAll($(this));*/
                             });
 
 
@@ -109,8 +114,15 @@
                             table.colReorder.move(3,0,false);// move product to 0
                             table.colReorder.move(2,4,false);// move product to 0
                           
-                            table.column(aboCol).search("Gross/Grand").draw();
-                            printTitle = "Gross/Grand";
+                            //table.column(aboCol).search("Gross/Grand").draw();
+                            //printTitle = "Gross/Grand";
+                            if(cookie == undefined)
+                            {
+                                onBtnClick($('#grobtn'));
+                            }
+                            else{
+                                onBtnClick($('#' + cookie));
+                            }
                             
                             var what = table.column(0).header();
                             var qtity = table.column(1).header();
@@ -123,8 +135,22 @@
                                 $('#minibtn').removeClass("btn-primary");
                                 $('#pitibtn').removeClass("btn-primary");
                                 $('#grobtn').removeClass("btn-primary");
-                                Cookies.set("korb",btn.attr('id'));
+                                
                                 btn.toggleClass("btn-primary");
+                            }
+                            function getKorbTextFromID(id)
+                            {
+                                if(id == "minibtn") return "Mini";
+                                if(id == "pitibtn") return "Klein/Petit";
+                                if(id == "grobtn") return "Gross/Grand";
+                            }
+                            function onBtnClick(btn)
+                            {
+                                var _id = getKorbTextFromID(btn.attr('id'));
+                                table.column(aboCol).search(_id).draw();
+                                printTitle = _id;
+                                removeAll(btn);
+                                Cookies.set("korb",btn.attr('id'));
                             }
                         });
                 </script>
