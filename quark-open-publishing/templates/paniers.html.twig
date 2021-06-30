@@ -47,20 +47,17 @@
                                                 .prepend(
                                                         '<img src="{{ uri.base()}}{{ theme_url }}/images/logo/tv_logo_mini_bk.png" style="position:absolute; top:0; right:0;" />'
                                                         );
-
-                                        /*$(win.document.body).find('table')
-                                         .addClass('compact')
-                                         .css('font-size', 'inherit');*/
                                         $(win.document.body).find(".odd").css("background-color", 0);
                                         var t = $(win.document.body).find("table tbody tr:nth-child(odd)");
-                    {#                                        $("table tbody tr:nth-child(odd)").css("background-color", "yellow");#}
                                         t.css("background-color", "beige");
-                    {#                                        $(t).css("background-color", "yellow");#}
-                                        //console.log( $(".odd").css("background-color", "yellow"));
+                                        
                                     },
                                     "title": function () {
                                         var printTit = printTitle + "<br/><small>" + tableTitle +"</small>";
                                         return printTit;
+                                    },
+                                    exportOptions: {
+                                        columns: [ 0, 1, 2, 4 ]
                                     }
                                 }
                             ],
