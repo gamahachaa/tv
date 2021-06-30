@@ -150,7 +150,7 @@
                                 table.column(aboCol).search(_id).draw();
                                 printTitle = _id;
                                 removeAll(btn);
-                                Cookies.set("korb",btn.attr('id'));
+                                Cookies.set("korb",btn.attr('id'),{ expires: 365 });
                             }
                         });
                 </script>
