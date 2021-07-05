@@ -976,6 +976,9 @@ and open the template in the editor.
     Created on : May 12, 2021, 5:24:20 PM
     Author     : bbaudry
 */
+.dataTable td {
+  text-align: right;
+}
 .dataTable tr.odd {
   background-color: beige;
 }

@@ -10,12 +10,14 @@ and open the template in the editor.
 
 
 .dataTable{
+    td{
+        text-align: right;
+    }
     tr.odd{
         background-color: beige;
     }
 }
-.dataTable tbody tr td:nth-child(1)  {
-    text-align: right;}
+
 .tags{
     a{
        border-bottom: 0px !important;
