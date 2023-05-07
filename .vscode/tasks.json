@@ -1,6 +1,13 @@
 {
     "version": "2.0.0",
     "liveSassCompile.settings.forceBaseDirectory": "/quark/scss/",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/quark/css-compiled/"
+        }
+    ],
     "tasks": [
         {
             "label": "Sass Compile",
