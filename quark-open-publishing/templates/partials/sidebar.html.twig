@@ -23,16 +23,16 @@
 {% endif %}
 
 {% if config.plugins.simplesearch.enabled and show_search %}
-    <div class="sidebar-content">
+    <div class="sidebar-content" id="simple-search">
         {% include 'partials/simplesearch_searchbox.html.twig' %}
-    </div>
+    </div><br/>
 {% endif %}
 
 {# display sidebar markdown page - hibbittsdesign.org #}
 {% if sidebar_page.header.position == 'top' or sidebar_page.header.position is empty %}
     {% if sidebar_page_content is not empty %}
         <div class="sidebar-content">
-            
+
             {{ sidebar_page_content|raw }}
         </div>
     {% endif %}
