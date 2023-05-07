@@ -32,6 +32,14 @@
                 {% endfor %}
                 <script>
                     $(document).ready(function () {
+                        //console.log(document.URL);
+                        var url = new URL(document.URL);
+                        var korbParam = url.searchParams.get("korb");  
+                        //console.log(korbParam);
+                        //url.searchParams.set('x', 42);
+                        //document.location.search = url.searchParams;
+                        
+                        
                         var cookie = Cookies.get("korb");
                         //console.log(cookie);
                         var aboCol = 4;
@@ -116,7 +124,11 @@
                           
                             //table.column(aboCol).search("Gross/Grand").draw();
                             //printTitle = "Gross/Grand";
-                            if(cookie == undefined)
+                            if(korbParam != undefined)
+                            {
+                                onBtnClick($('#' + korbParam));
+                            }
+                            else if(cookie == undefined)
                             {
                                 onBtnClick($('#grobtn'));
                             }
@@ -142,7 +154,8 @@
                             {
                                 if(id == "minibtn") return "Mini";
                                 if(id == "pitibtn") return "Klein/Petit";
-                                if(id == "grobtn") return "Gross/Grand";
+                                //if(id == "grobtn")return "Gross/Grand";
+                                return "Gross/Grand";
                             }
                             function onBtnClick(btn)
                             {
