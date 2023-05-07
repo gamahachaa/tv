@@ -1,6 +1,7 @@
 /*! Spectre.css Icons v0.5.8 | MIT License | github.com/picturepan2/spectre */
 .icon {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   font-size: inherit;
   font-style: normal;
@@ -16,7 +17,8 @@
   left: 50%;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .icon.icon-2x {
   font-size: 1.6rem;
@@ -55,19 +57,23 @@
 }
 
 .icon-arrow-down::before {
-  transform: translate(-50%, -75%) rotate(225deg);
+  -webkit-transform: translate(-50%, -75%) rotate(225deg);
+          transform: translate(-50%, -75%) rotate(225deg);
 }
 
 .icon-arrow-left::before {
-  transform: translate(-25%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-25%, -50%) rotate(-45deg);
+          transform: translate(-25%, -50%) rotate(-45deg);
 }
 
 .icon-arrow-right::before {
-  transform: translate(-75%, -50%) rotate(135deg);
+  -webkit-transform: translate(-75%, -50%) rotate(135deg);
+          transform: translate(-75%, -50%) rotate(135deg);
 }
 
 .icon-arrow-up::before {
-  transform: translate(-50%, -25%) rotate(45deg);
+  -webkit-transform: translate(-50%, -25%) rotate(45deg);
+          transform: translate(-50%, -25%) rotate(45deg);
 }
 
 .icon-back::after,
@@ -88,28 +94,32 @@
   left: 55%;
 }
 .icon-back::before {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .icon-downward::after {
   top: 45%;
 }
 .icon-downward::before {
-  transform: translate(-50%, -50%) rotate(-135deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+          transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 .icon-forward::after {
   left: 45%;
 }
 .icon-forward::before {
-  transform: translate(-50%, -50%) rotate(135deg);
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+          transform: translate(-50%, -50%) rotate(135deg);
 }
 
 .icon-upward::after {
   top: 55%;
 }
 .icon-upward::before {
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .icon-caret::before {
@@ -117,20 +127,23 @@
   border-right: 0.3em solid transparent;
   border-left: 0.3em solid transparent;
   height: 0;
-  transform: translate(-50%, -25%);
+  -webkit-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
   width: 0;
 }
 
 .icon-menu::before {
   background: currentColor;
-  box-shadow: 0 -0.35em, 0 0.35em;
+  -webkit-box-shadow: 0 -0.35em, 0 0.35em;
+          box-shadow: 0 -0.35em, 0 0.35em;
   height: 0.1rem;
   width: 100%;
 }
 
 .icon-apps::before {
   background: currentColor;
-  box-shadow: -0.35em -0.35em, -0.35em 0, -0.35em 0.35em, 0 -0.35em, 0 0.35em, 0.35em -0.35em, 0.35em 0, 0.35em 0.35em;
+  -webkit-box-shadow: -0.35em -0.35em, -0.35em 0, -0.35em 0.35em, 0 -0.35em, 0 0.35em, 0.35em -0.35em, 0.35em 0, 0.35em 0.35em;
+          box-shadow: -0.35em -0.35em, -0.35em 0, -0.35em 0.35em, 0 -0.35em, 0 0.35em, 0.35em -0.35em, 0.35em 0, 0.35em 0.35em;
   height: 3px;
   width: 3px;
 }
@@ -146,31 +159,37 @@
 }
 .icon-resize-horiz::before,
 .icon-resize-vert::before {
-  transform: translate(-50%, -90%) rotate(45deg);
+  -webkit-transform: translate(-50%, -90%) rotate(45deg);
+          transform: translate(-50%, -90%) rotate(45deg);
 }
 .icon-resize-horiz::after,
 .icon-resize-vert::after {
-  transform: translate(-50%, -10%) rotate(225deg);
+  -webkit-transform: translate(-50%, -10%) rotate(225deg);
+          transform: translate(-50%, -10%) rotate(225deg);
 }
 
 .icon-resize-horiz::before {
-  transform: translate(-90%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-90%, -50%) rotate(-45deg);
+          transform: translate(-90%, -50%) rotate(-45deg);
 }
 .icon-resize-horiz::after {
-  transform: translate(-10%, -50%) rotate(135deg);
+  -webkit-transform: translate(-10%, -50%) rotate(135deg);
+          transform: translate(-10%, -50%) rotate(135deg);
 }
 
 .icon-more-horiz::before,
 .icon-more-vert::before {
   background: currentColor;
-  box-shadow: -0.4em 0, 0.4em 0;
+  -webkit-box-shadow: -0.4em 0, 0.4em 0;
+          box-shadow: -0.4em 0, 0.4em 0;
   border-radius: 50%;
   height: 3px;
   width: 3px;
 }
 
 .icon-more-vert::before {
-  box-shadow: 0 -0.4em, 0 0.4em;
+  -webkit-box-shadow: 0 -0.4em, 0 0.4em;
+          box-shadow: 0 -0.4em, 0 0.4em;
 }
 
 .icon-plus::before,
@@ -195,7 +214,8 @@
   height: 100%;
 }
 .icon-cross::before, .icon-cross::after {
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .icon-check::before {
@@ -204,7 +224,8 @@
   border-top: 0;
   height: 0.5em;
   width: 0.9em;
-  transform: translate(-50%, -75%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -75%) rotate(-45deg);
+          transform: translate(-50%, -75%) rotate(-45deg);
 }
 
 .icon-stop {
@@ -214,7 +235,8 @@
 .icon-stop::before {
   background: currentColor;
   height: 0.1rem;
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
   width: 1em;
 }
 
@@ -254,7 +276,8 @@
   height: 0.75em;
   left: 5%;
   top: 5%;
-  transform: translate(0, 0) rotate(45deg);
+  -webkit-transform: translate(0, 0) rotate(45deg);
+          transform: translate(0, 0) rotate(45deg);
   width: 0.75em;
 }
 .icon-search::after {
@@ -262,14 +285,16 @@
   height: 0.1rem;
   left: 80%;
   top: 80%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
   width: 0.4em;
 }
 
 .icon-edit::before {
   border: 0.1rem solid currentColor;
   height: 0.4em;
-  transform: translate(-40%, -60%) rotate(-45deg);
+  -webkit-transform: translate(-40%, -60%) rotate(-45deg);
+          transform: translate(-40%, -60%) rotate(-45deg);
   width: 0.85em;
 }
 .icon-edit::after {
@@ -279,7 +304,8 @@
   height: 0;
   left: 5%;
   top: 95%;
-  transform: translate(0, -100%);
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
   width: 0;
 }
 
@@ -294,7 +320,8 @@
 }
 .icon-delete::after {
   background: currentColor;
-  box-shadow: -0.25em 0.2em, 0.25em 0.2em;
+  -webkit-box-shadow: -0.25em 0.2em, 0.25em 0.2em;
+          box-shadow: -0.25em 0.2em, 0.25em 0.2em;
   height: 0.1rem;
   top: 0.05rem;
   width: 0.5em;
@@ -313,7 +340,8 @@
   height: 0.4em;
   left: 100%;
   top: 0.25em;
-  transform: translate(-125%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-125%, -50%) rotate(-45deg);
+          transform: translate(-125%, -50%) rotate(-45deg);
   width: 0.4em;
 }
 .icon-share::after {
@@ -356,7 +384,8 @@
   border-left: 0;
   border-radius: 0.1rem;
   height: 0.5em;
-  transform: translate(-50%, 35%) rotate(-45deg) skew(15deg, 15deg);
+  -webkit-transform: translate(-50%, 35%) rotate(-45deg) skew(15deg, 15deg);
+          transform: translate(-50%, 35%) rotate(-45deg) skew(15deg, 15deg);
   width: 0.5em;
 }
 
@@ -371,7 +400,8 @@
   border-right: 0;
   height: 0.5em;
   width: 0.5em;
-  transform: translate(-50%, -60%) rotate(-135deg);
+  -webkit-transform: translate(-50%, -60%) rotate(-135deg);
+          transform: translate(-50%, -60%) rotate(-135deg);
 }
 .icon-download::after,
 .icon-upload::after {
@@ -382,7 +412,8 @@
 }
 
 .icon-upload::before {
-  transform: translate(-50%, -60%) rotate(45deg);
+  -webkit-transform: translate(-50%, -60%) rotate(45deg);
+          transform: translate(-50%, -60%) rotate(45deg);
 }
 .icon-upload::after {
   top: 50%;
@@ -414,14 +445,17 @@
 .icon-time::before {
   background: currentColor;
   height: 0.4em;
-  transform: translate(-50%, -75%);
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
   width: 0.1rem;
 }
 .icon-time::after {
   background: currentColor;
   height: 0.3em;
-  transform: translate(-50%, -75%) rotate(90deg);
-  transform-origin: 50% 90%;
+  -webkit-transform: translate(-50%, -75%) rotate(90deg);
+          transform: translate(-50%, -75%) rotate(90deg);
+  -webkit-transform-origin: 50% 90%;
+          transform-origin: 50% 90%;
   width: 0.1rem;
 }
 
@@ -436,7 +470,8 @@
   border-right: 0;
   border-top: 0;
   height: 0.5em;
-  transform: translate(-50%, -90%) rotate(-45deg) skew(10deg, 10deg);
+  -webkit-transform: translate(-50%, -90%) rotate(-45deg) skew(10deg, 10deg);
+          transform: translate(-50%, -90%) rotate(-45deg) skew(10deg, 10deg);
   width: 0.5em;
 }
 
@@ -477,7 +512,8 @@
   height: 0.3em;
   left: 10%;
   top: 100%;
-  transform: translate(0, -90%) rotate(45deg);
+  -webkit-transform: translate(0, -90%) rotate(45deg);
+          transform: translate(0, -90%) rotate(45deg);
   width: 0.1rem;
 }
 
@@ -499,7 +535,8 @@
   border-left: 0;
   height: 0.5em;
   left: 60%;
-  transform: translate(-50%, 25%) rotate(-45deg);
+  -webkit-transform: translate(-50%, 25%) rotate(-45deg);
+          transform: translate(-50%, 25%) rotate(-45deg);
   width: 0.5em;
 }
 
@@ -511,24 +548,28 @@
   width: 0.75em;
 }
 .icon-link::before {
-  transform: translate(-70%, -45%) rotate(-45deg);
+  -webkit-transform: translate(-70%, -45%) rotate(-45deg);
+          transform: translate(-70%, -45%) rotate(-45deg);
 }
 .icon-link::after {
-  transform: translate(-30%, -55%) rotate(135deg);
+  -webkit-transform: translate(-30%, -55%) rotate(135deg);
+          transform: translate(-30%, -55%) rotate(135deg);
 }
 
 .icon-location::before {
   border: 0.1rem solid currentColor;
   border-radius: 50% 50% 50% 0;
   height: 0.8em;
-  transform: translate(-50%, -60%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -60%) rotate(-45deg);
+          transform: translate(-50%, -60%) rotate(-45deg);
   width: 0.8em;
 }
 .icon-location::after {
   border: 0.1rem solid currentColor;
   border-radius: 50%;
   height: 0.2em;
-  transform: translate(-50%, -80%);
+  -webkit-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
   width: 0.2em;
 }
 
@@ -538,7 +579,8 @@
 }
 .icon-emoji::before {
   border-radius: 50%;
-  box-shadow: -0.17em -0.1em, 0.17em -0.1em;
+  -webkit-box-shadow: -0.17em -0.1em, 0.17em -0.1em;
+          box-shadow: -0.17em -0.1em, 0.17em -0.1em;
   height: 0.15em;
   width: 0.15em;
 }
@@ -548,8 +590,7 @@
   border-radius: 50%;
   border-right-color: transparent;
   height: 0.5em;
-  transform: translate(-50%, -40%) rotate(-135deg);
+  -webkit-transform: translate(-50%, -40%) rotate(-135deg);
+          transform: translate(-50%, -40%) rotate(-135deg);
   width: 0.5em;
-}
-
-/*# sourceMappingURL=spectre-icons.css.map */
+}/*# sourceMappingURL=spectre-icons.css.map */
