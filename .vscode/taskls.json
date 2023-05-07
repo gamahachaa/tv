@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0",
+    "liveSassCompile.settings.forceBaseDirectory": "/quark/scss/",
+    "tasks": [
+        {
+            "label": "Sass Compile",
+            "type": "shell",
+            "command": "sass ${workspaceRoot}/quark/scss/theme.scss ${workspaceRoot}/quark/css-compiled/theme.css",
+            "group": "build"
+          }
+    ]
+}
