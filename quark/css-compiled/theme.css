@@ -25,9 +25,15 @@ section.section {
 }
 
 .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 6rem;
   padding-bottom: 7rem;
   background-size: cover;
@@ -105,12 +111,14 @@ section.section {
   background: rgba(255, 255, 255, 0.4);
 }
 .overlay-light-gradient .image-overlay {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.2)));
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
 }
 .overlay-dark .image-overlay {
   background: rgba(0, 0, 0, 0.4);
 }
 .overlay-dark-gradient .image-overlay {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.2)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
 }
 
@@ -170,7 +178,8 @@ h6, .h6 {
 
 a:focus {
   outline: none !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 img {
@@ -282,10 +291,13 @@ form span.required {
   font-size: 1.2rem;
 }
 form .form-input[type=range] {
-  appearance: slider-horizontal;
+  -webkit-appearance: slider-horizontal;
+     -moz-appearance: slider-horizontal;
+          appearance: slider-horizontal;
 }
 form .form-input[type=range]:focus {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: none;
 }
 form .form-input.x-small {
@@ -408,6 +420,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   width: 28px;
   cursor: pointer;
   z-index: 100;
+  -webkit-transition: opacity 0.25s ease, top 0.5s ease;
   transition: opacity 0.25s ease, top 0.5s ease;
 }
 .mobile-menu .button_container:hover {
@@ -417,7 +430,8 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   position: fixed;
 }
 .mobile-menu .button_container.active .top {
-  transform: translateY(8px) translateX(0) rotate(45deg);
+  -webkit-transform: translateY(8px) translateX(0) rotate(45deg);
+          transform: translateY(8px) translateX(0) rotate(45deg);
   background: #FFF;
 }
 .mobile-menu .button_container.active .middle {
@@ -425,7 +439,8 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   background: #FFF;
 }
 .mobile-menu .button_container.active .bottom {
-  transform: translateY(-8px) translateX(0) rotate(-45deg);
+  -webkit-transform: translateY(-8px) translateX(0) rotate(-45deg);
+          transform: translateY(-8px) translateX(0) rotate(-45deg);
   background: #FFF;
 }
 .mobile-menu .button_container span {
@@ -436,6 +451,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
   cursor: pointer;
 }
@@ -455,6 +471,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   height: 0%;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   transition: opacity 0.35s, visibility 0.35s, height 0.35s;
 }
 .overlay.open {
@@ -530,41 +547,90 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
 }
 
 .default-animation, .modular-features .feature-icon, .modular-features.small .feature-icon i, #header .logo svg, #header .logo img, #header .navbar-section, #header {
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
 .pulse {
-  animation-name: pulse_animation;
-  animation-duration: 2000ms;
-  transform-origin: 70% 70%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: pulse_animation;
+          animation-name: pulse_animation;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-transform-origin: 70% 70%;
+          transform-origin: 70% 70%;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse_animation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @keyframes pulse_animation {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   30% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   40% {
-    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
   }
   50% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   60% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   70% {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   80% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 #header {
@@ -620,7 +686,8 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
 #header .logo svg, #header .logo img {
   /*height: 42px;*/
   display: inherit;
-  filter: drop-shadow(1px 1px 2px white) drop-shadow(-1px -1px 2px white) drop-shadow(1px -1px 2px white) drop-shadow(-1px 1px 2px white) drop-shadow(1px 0px 2px white);
+  -webkit-filter: drop-shadow(1px 1px 2px white) drop-shadow(-1px -1px 2px white) drop-shadow(1px -1px 2px white) drop-shadow(-1px 1px 2px white) drop-shadow(1px 0px 2px white);
+          filter: drop-shadow(1px 1px 2px white) drop-shadow(-1px -1px 2px white) drop-shadow(1px -1px 2px white) drop-shadow(-1px 1px 2px white) drop-shadow(1px 0px 2px white);
 }
 .header-fixed #header {
   position: fixed;
@@ -648,11 +715,18 @@ body.header-fixed.header-animated #header.scrolled ~ .mobile-menu .button_contai
 body.sticky-footer {
   height: 100%;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 body.sticky-footer #page-wrapper {
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 #footer {
@@ -669,6 +743,8 @@ body.sticky-footer #page-wrapper {
 .dropmenu ul {
   white-space: nowrap;
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .dropmenu ul li {
@@ -684,7 +760,7 @@ body.sticky-footer #page-wrapper {
   color: #8db215 !important;
 }
 .dropmenu ul li a:before {
-  content: "";
+  content: "\f107";
   font-family: "FontAwesome";
   display: inline-block;
   vertical-align: middle;
@@ -727,14 +803,15 @@ body.sticky-footer #page-wrapper {
   visibility: visible;
 }
 .dropmenu ul ul li a:before {
-  content: "";
+  content: "\f105";
 }
 .dropmenu ul ul {
   position: absolute;
   top: 100%;
   list-style: none;
   background: #fff;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   visibility: hidden;
 }
 .dropmenu ul ul ul {
@@ -746,16 +823,22 @@ body.sticky-footer #page-wrapper {
   display: inline-block;
 }
 .dropmenu.animated ul li {
+  -webkit-transition: background 0.7s, color 0.5s;
   transition: background 0.7s, color 0.5s;
 }
 .dropmenu.animated ul li:hover > ul {
   opacity: 1;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .dropmenu.animated ul ul {
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.3s;
+  transition: opacity 0.5s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.5s;
+  transition: transform 0.3s, opacity 0.5s, -webkit-transform 0.3s;
   opacity: 0;
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .overlay-menu .treemenu .langswitcher {
@@ -763,10 +846,8 @@ body.sticky-footer #page-wrapper {
   top: 6rem;
   position: fixed;
   font-size: 0.7rem;
-  -moz-transform: translateY(50%) !important;
-  -o-transform: translateY(50%) !important;
-  -ms-transform: translateY(50%) !important;
-  transform: translateY(50%) !important;
+  -webkit-transform: translateY(50%) !important;
+          transform: translateY(50%) !important;
 }
 .overlay-menu .treemenu .langswitcher.tree-empty .toggler {
   display: none;
@@ -795,8 +876,12 @@ body.sticky-footer #page-wrapper {
 /** Breadcrumbs styling **/
 #breadcrumbs {
   padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: -1rem;
   margin-bottom: 1rem;
 }
@@ -823,7 +908,8 @@ body.sticky-footer #page-wrapper {
 .blog-listing .card {
   margin-bottom: 25px;
   border: 0;
-  box-shadow: 0 10px 45px -9px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 45px -9px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 45px -9px rgba(0, 0, 0, 0.1);
 }
 .blog-listing .card-footer {
   text-align: right;
@@ -846,7 +932,9 @@ body.sticky-footer #page-wrapper {
 
 /** Pagination **/
 ul.pagination {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .prev-next {
@@ -855,7 +943,8 @@ ul.pagination {
 
 /** Sidebar specific tweaks **/
 #sidebar ul.related-pages {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   padding: 0;
   z-index: 1;
 }
@@ -884,7 +973,8 @@ ul.pagination {
   margin: -3rem -1.4rem 3rem;
   padding: 1rem 1rem;
   background: #fff;
-  box-shadow: 0 0 75px 0 rgba(84, 58, 46, 0.1);
+  -webkit-box-shadow: 0 0 75px 0 rgba(84, 58, 46, 0.1);
+          box-shadow: 0 0 75px 0 rgba(84, 58, 46, 0.1);
 }
 .modular-features.small .columns {
   margin-top: -1rem;
@@ -894,14 +984,17 @@ ul.pagination {
 }
 .modular-features.small .feature-icon {
   display: block;
-  justify-content: left;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 .modular-features.small .feature-icon i {
   position: relative;
   display: inherit;
   font-size: 70px;
   margin: 0 auto 1rem;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   left: auto;
   top: auto;
   color: #c19e8d;
@@ -933,9 +1026,15 @@ ul.pagination {
   font-size: 130px;
   height: 100px;
   color: #e5d6cf;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   margin: 1rem 0;
 }
@@ -943,7 +1042,8 @@ ul.pagination {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
 }
 .modular-features .feature-icon h6 {
   background: #fff;
@@ -964,7 +1064,10 @@ ul.pagination {
   padding-bottom: 4rem;
 }
 .modular-text .columns.left {
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 /*
@@ -972,7 +1075,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : May 12, 2021, 5:24:20 PM
     Author     : bbaudry
 */
@@ -1002,4 +1105,6 @@ and open the template in the editor.
   border-bottom: none;
 }
 
-/*# sourceMappingURL=theme.css.map */
+.sidebar-content p {
+  margin: 0 0 0.3rem 1rem !important;
+}/*# sourceMappingURL=theme.css.map */
