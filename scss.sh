@@ -1,2 +1,2 @@
 #!/bin/sh
-scss --watch scss:css-compiled
+sass --watch ./quark/scss/:./quark/css-compiled/
