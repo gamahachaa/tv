@@ -2,7 +2,7 @@
   {% import _self as macros %}
   {% for p in page.children.visible %}
     {{dump(p.folder)}}
-    {{dump(p.routable}}
+    {{dump(p.routable)}}
     {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
     <li>
     
