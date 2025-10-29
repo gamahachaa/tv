@@ -37,22 +37,24 @@
                 subtree.hide();
 
                 e.addClass('tree-closed');
-
                 e.find(button).click(function() {
                     var li = $(this).parent('li');
 
-                    if (options.closeOther && li.hasClass('tree-closed')) {
-                        var siblings = li.parent('ul').find("li:not(.tree-empty)");
-                        siblings.removeClass("tree-opened");
-                        siblings.addClass("tree-closed");
-                        siblings.removeClass(options.activeSelector);
-                        siblings.find('> ul').slideUp(options.delay);
-                    }
+                    // Only toggle tree states if this is NOT a leaf node (tree-empty)
+                    if (!li.hasClass('tree-empty')) {
+                        if (options.closeOther && li.hasClass('tree-closed')) {
+                            var siblings = li.parent('ul').find("li:not(.tree-empty)");
+                            siblings.removeClass("tree-opened");
+                            siblings.addClass("tree-closed");
+                            siblings.removeClass(options.activeSelector);
+                            siblings.find('> ul').slideUp(options.delay);
+                        }
 
-                    li.find('> ul').slideToggle(options.delay);
-                    li.toggleClass('tree-opened');
-                    li.toggleClass('tree-closed');
-                    li.toggleClass(options.activeSelector);
+                        li.find('> ul').slideToggle(options.delay);
+                        li.toggleClass('tree-opened');
+                        li.toggleClass('tree-closed');
+                        li.toggleClass(options.activeSelector);
+                    }
                 });
 
                 $(this).find('> ul').treemenu(options);
@@ -73,7 +75,9 @@
                         el.show();
                     } else if (el.prop("tagName") === 'LI') {
                         el.removeClass('tree-closed');
-                        el.addClass("tree-opened");
+                        if (!el.hasClass('tree-empty')) {
+                            el.addClass("tree-opened");
+                        }
                         el.show();
                     }
 

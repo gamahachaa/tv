@@ -52,9 +52,9 @@ jQuery(document).ready(function($){
         $('#overlay').toggleClass('open');
         $('body').toggleClass('mobile-nav-open');
     });
-
     // Tree Menu
-    $(".tree").treemenu({delay:300});
+    $(".tree").treemenu({delay:300, openActive: true,
+        activeSelector: '.active', closeOther:false});
 
 });
 

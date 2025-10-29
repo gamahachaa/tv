@@ -137,21 +137,32 @@
   li {
     list-style: none;
     margin: 0 0 1px;
-    padding: 5px 0;
+    padding: 1px 0;
     line-height: 1.2rem;
 
     background: rgba($gray-color-dark,0.1);
 
     a {
       display: block;
-      margin-left: 1.2rem;
+      margin-left: .2rem;
       font-size: 1rem;
+      padding: 0 8px !important;
 
       &:hover, &:focus, &.active {
         color: $primary-color-light !important;
         text-decoration: none;
       }
     }
+
+    //& {
+    //  // Go up to the parent <li> and target the span.toggler
+    //  @at-root li:has(> a.active) > .toggler {
+    //    // Your styles here
+    //    //background-color: red; // example
+    //    background-color: #959c26;
+    //    color: rgba($gray-color-dark,1);
+    //  }
+    //}
   }
 
   ul {
@@ -161,19 +172,21 @@
   .toggler {
     cursor: pointer;
     vertical-align: top;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    font-family: monospace;
     /*line-height: 1rem;*/
-    padding: 5px;
+    padding: 0 2px;
     float: left;
-    background-color: #959c26;
+    color: #959c26;
+    //background-color: #959c26;
     &:before {
       display: inline-block; margin-right: 2pt;
     }
   }
 
   li.tree-empty  > .toggler {
-    opacity: 0.3; cursor: default;
-
+    //opacity: 0.3;
+    //cursor: default;
     &:before {
       content: "\2022";
     }
