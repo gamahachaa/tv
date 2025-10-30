@@ -130,9 +130,9 @@
 
 .treemenu {
   .langswitcher{
-    position: fixed;
-    top:1rem;
-    right: 50%;
+    position: fixed !important;
+    top:1rem !important;
+    right: 50% !important;
   }
 
   &.treemenu-root {
