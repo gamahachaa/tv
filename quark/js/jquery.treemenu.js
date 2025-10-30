@@ -18,13 +18,31 @@
         if (!options.nonroot) {
             this.addClass("treemenu-root");
         }
+        var onclicked = function() {
+            var li = $(this).parent('li');
+            // Only toggle tree states if this is NOT a leaf node (tree-empty)
+            if (!li.hasClass('tree-empty')) {
+                if (options.closeOther && li.hasClass('tree-closed')) {
+                    var siblings = li.parent('ul').find("li:not(.tree-empty)");
+                    siblings.removeClass("tree-opened");
+                    siblings.addClass("tree-closed");
+                    siblings.removeClass(options.activeSelector);
+                    siblings.find('> ul').slideUp(options.delay);
+                }
 
+                li.find('> ul').slideToggle(options.delay);
+                li.toggleClass('tree-opened');
+                li.toggleClass('tree-closed');
+                li.toggleClass(options.activeSelector);
+            }
+        }
         options.nonroot = true;
 
         this.find("> li").each(function() {
             e = $(this);
             var subtree = e.find('> ul');
             var button = e.find('.toggler').eq(0);
+            var anchor = e.find('a');
 
             if(button.length == 0) {
                 // create toggler
@@ -37,25 +55,8 @@
                 subtree.hide();
 
                 e.addClass('tree-closed');
-                e.find(button).click(function() {
-                    var li = $(this).parent('li');
-
-                    // Only toggle tree states if this is NOT a leaf node (tree-empty)
-                    if (!li.hasClass('tree-empty')) {
-                        if (options.closeOther && li.hasClass('tree-closed')) {
-                            var siblings = li.parent('ul').find("li:not(.tree-empty)");
-                            siblings.removeClass("tree-opened");
-                            siblings.addClass("tree-closed");
-                            siblings.removeClass(options.activeSelector);
-                            siblings.find('> ul').slideUp(options.delay);
-                        }
-
-                        li.find('> ul').slideToggle(options.delay);
-                        li.toggleClass('tree-opened');
-                        li.toggleClass('tree-closed');
-                        li.toggleClass(options.activeSelector);
-                    }
-                });
+                e.find(button).click(onclicked);
+                e.find(anchor).click(onclicked);
 
                 $(this).find('> ul').treemenu(options);
             } else {

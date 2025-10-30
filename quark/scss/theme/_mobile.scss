@@ -10,14 +10,23 @@
 
 .mobile-logo {
   svg, img {
-    height: 42px;
+    @extend .default-animation;
+    filter:
+            drop-shadow(1px 1px 2px white)
+            drop-shadow(-1px -1px 2px white)
+            drop-shadow(1px -1px 2px white)
+            drop-shadow(-1px 1px 2px white)
+            drop-shadow(1px 0px 2px white);
+
+    //height: 120px;
     margin-top: .7rem;
     margin-left: 1.4rem;
-
+    position:fixed;
+    right:1rem;
+    bottom:1rem;
     path {
       fill: $light-color;
     }
-
   }
 }
 
@@ -136,7 +145,7 @@
   }
 
   &.treemenu-root {
-    margin: 1rem;
+    margin:4rem 1rem;
   }
 
   li {
@@ -145,12 +154,12 @@
     padding: 1px 0;
     line-height: 1.2rem;
 
-    background: rgba($gray-color-dark,0.1);
+    //background: rgba($gray-color-dark,0.1);
 
     a {
       display: block;
       margin-left: .2rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       padding: 0 8px !important;
 
       &:hover, &:focus, &.active {

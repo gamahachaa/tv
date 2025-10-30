@@ -380,9 +380,12 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
 }
 
 .mobile-logo svg, .mobile-logo img {
-  height: 42px;
+  filter: drop-shadow(1px 1px 2px white) drop-shadow(-1px -1px 2px white) drop-shadow(1px -1px 2px white) drop-shadow(-1px 1px 2px white) drop-shadow(1px 0px 2px white);
   margin-top: 0.7rem;
   margin-left: 1.4rem;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
 }
 .mobile-logo svg path, .mobile-logo img path {
   fill: #fff;
@@ -484,19 +487,18 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   right: 50% !important;
 }
 .treemenu.treemenu-root {
-  margin: 1rem;
+  margin: 4rem 1rem;
 }
 .treemenu li {
   list-style: none;
   margin: 0 0 1px;
   padding: 1px 0;
   line-height: 1.2rem;
-  background: rgba(133.4307692308, 92.1307692308, 73.0692307692, 0.1);
 }
 .treemenu li a {
   display: block;
   margin-left: 0.2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0 8px !important;
 }
 .treemenu li a:hover, .treemenu li a:focus, .treemenu li a.active {
@@ -534,7 +536,7 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   overflow-y: hidden;
 }
 
-.default-animation, .modular-features .feature-icon, .modular-features.small .feature-icon i, #header .logo svg, #header .logo img, #header .navbar-section, #header {
+.default-animation, .modular-features .feature-icon, .modular-features.small .feature-icon i, #header .logo svg, #header .logo img, #header .navbar-section, #header, .mobile-logo svg, .mobile-logo img {
   transition: all 0.5s ease;
 }
 
