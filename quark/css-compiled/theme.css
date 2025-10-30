@@ -478,6 +478,11 @@ form .form-group:not(.form-field-toggleable) .checkboxes label:before {
   text-align: left;
 }
 
+.treemenu .langswitcher {
+  position: fixed;
+  top: 1rem;
+  right: 50%;
+}
 .treemenu.treemenu-root {
   margin: 1rem;
 }

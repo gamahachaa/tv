@@ -129,6 +129,11 @@
 
 
 .treemenu {
+  .langswitcher{
+    position: fixed;
+    top:1rem;
+    right: 50%;
+  }
 
   &.treemenu-root {
     margin: 1rem;
