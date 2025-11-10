@@ -1,0 +1,171 @@
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.title:
+              type: text
+              label: PLUGIN_ADMIN.TITLE
+              default: 'Abo Anpassungen'
+
+            content:
+              type: textarea
+              label: PLUGIN_ADMIN.CONTENT
+              size: large
+
+        form_settings:
+          type: tab
+          title: Form Settings
+
+          fields:
+            header.form.name:
+              type: text
+              label: Form Name
+              default: 'modification-form'
+              validate:
+                required: true
+
+        form_fields:
+          type: tab
+          title: Form Fields
+
+          fields:
+            header.form.fields:
+              type: list
+              label: Form Fields
+
+              fields:
+                .name:
+                  type: text
+                  label: Field Name
+
+                .label:
+                  type: text
+                  label: Field Label
+
+                .type:
+                  type: select
+                  label: Field Type
+                  options:
+                    text: Text
+                    email: Email
+                    radio: Radio
+                    checkboxes: Checkboxes
+                    captcha: Captcha
+
+                .placeholder:
+                  type: text
+                  label: Placeholder
+
+                .autofocus:
+                  type: toggle
+                  label: Autofocus
+
+                .autocomplete:
+                  type: toggle
+                  label: Autocomplete
+
+                .validate.required:
+                  type: toggle
+                  label: Required
+
+                .options:
+                  type: array
+                  label: Options
+                  placeholder_key: Option Key
+                  placeholder_value: Option Value
+
+        form_buttons:
+          type: tab
+          title: Form Buttons
+
+          fields:
+            header.form.buttons:
+              type: list
+              label: Form Buttons
+
+              fields:
+                .type:
+                  type: select
+                  label: Button Type
+                  options:
+                    submit: Submit
+                    reset: Reset
+
+                .value:
+                  type: text
+                  label: Button Text
+
+        form_process:
+          type: tab
+          title: Form Processing
+
+          fields:
+            header.form.process:
+              type: list
+              label: Process Actions
+
+              fields:
+                .captcha:
+                  type: toggle
+                  label: Enable Captcha
+
+                .email.from:
+                  type: text
+                  label: From Email
+                  default: '{{ config.plugins.email.from }}'
+
+                .email.to:
+                  type: array
+                  label: To Emails
+
+                .email.subject:
+                  type: text
+                  label: Email Subject
+                  default: '[modif] {{ form.value.name|e }}'
+
+                .email.body:
+                  type: text
+                  label: Email Body Template
+                  default: '{% include ''forms/data.html.twig'' %}'
+
+                .save.fileprefix:
+                  type: text
+                  label: Save File Prefix
+                  default: 'modif-'
+
+                .save.dateformat:
+                  type: text
+                  label: Date Format
+                  default: 'Ymd-His-u'
+
+                .save.extension:
+                  type: text
+                  label: File Extension
+                  default: 'txt'
+
+                .save.body:
+                  type: text
+                  label: Save Body Template
+                  default: '{% include ''forms/data.txt.twig'' %}'
+
+                .message:
+                  type: text
+                  label: Success Message
+                  default: 'Vielen dank für deine Anfrage.'
+
+                .display:
+                  type: text
+                  label: Display Page
+                  default: 'thankyou'

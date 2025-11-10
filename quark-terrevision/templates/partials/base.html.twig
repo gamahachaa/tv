@@ -118,7 +118,9 @@
     {# check content display flag - hibbittsdesign.org #}
     {% if not (grav.uri.param('chromeless') or grav.uri.param('embedded')) and (not theme_var('chromeless.enabled')) %}
         {% block footer %}
-            {{ dump('DEBUGGING') }}
+            {{ dump("DEBUGGING base.twig") }}
+            {{ dump("page.taxonomy") }}
+            {{ dump(page.taxonomy) }}
             <section id="footer" class="section bg-gray">
                 <section class="container {{ grid_size }}">
                     {# check to display git sync link in footer or not yet defined by saving theme settings - hibbittsdesign.org #}
@@ -126,8 +128,8 @@
 {#                        <br>{% include 'partials/git_sync_repo_link.html.twig' %}<br><br>#}
 {#                    {% endif %}#}
                     {# display footer markdown page - hibbittsdesign.org #}
+
                     {% set content = pages.find('/footer').content %}
-                    {{ dump(content) }}
                     {% if content %}
                         {{ content|raw }}
                     {% endif %}

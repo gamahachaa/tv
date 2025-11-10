@@ -105,6 +105,7 @@
                 {# check content display flag - hibbittsdesign.org #}
                 {% if not (grav.uri.param('chromeless') or grav.uri.param('embedded')) and not(theme_var('chromeless.enabled')) %}
                     {% block sidebar %}
+                        {{ dump('show sidebar') }}
                         {% include 'partials/sidebar.html.twig' %}
                     {% endblock %}
                 {% endif %}
@@ -118,4 +119,5 @@
             var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
         {% endif %}
     </script>
+
 {% endblock %}

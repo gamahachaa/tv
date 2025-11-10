@@ -1,0 +1,74 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.title:
+              type: text
+              label: PLUGIN_ADMIN.TITLE
+
+            content:
+              type: textarea
+              label: PLUGIN_ADMIN.CONTENT
+              size: large
+
+        korbgrosse:
+          type: tab
+          title: Korbgrösse
+
+          fields:
+            header.form.fields.2.label:
+              type: text
+              label: Label
+              default: 'Korbgrösse anpassen :'
+              help: 'The label displayed above the basket size options'
+
+            header.form.fields.2.options:
+              type: array
+              label: Korb Grossen
+              placeholder_key: Optionstaste
+              placeholder_value: Beschreibung
+              help: 'Add or remove basket size change options'
+
+        products_add:
+          type: tab
+          title: Produkte hinzufügen
+
+          fields:
+            header.form.fields.3.label:
+              type: text
+              label: Field Label
+              default: 'Ich möchte die folgende Zusatzprodukte abonnieren'
+              help: 'Das Label für Produkte, die Kunden zu ihrem Abonnement hinzufügen möchten'
+
+            header.form.fields.3.options:
+              type: array
+              label: Verfügbare Produkte
+              placeholder_key: Produkt Key
+              placeholder_value: Produktbeschreibung mit Preis
+              help: 'Products that customers can add to their subscription'
+
+        products_remove:
+          type: tab
+          title: Zu entfernende Produkte
+
+          fields:
+            header.form.fields.4.label:
+              type: text
+              label: Field Label
+              default: 'Ich möchte folgende Zusatzprodukte nicht mehr abonnieren'
+              help: 'The label for products customers want to remove from their subscription'
+
+            header.form.fields.4.options:
+              type: array
+              label: Zu entfernende Produkte
+              placeholder_key: Product Key
+              placeholder_value: Produktbeschreibung mit Preis
+              help: 'Products that customers can remove from their subscription'

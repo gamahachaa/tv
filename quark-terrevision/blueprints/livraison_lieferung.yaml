@@ -1,0 +1,34 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.title:
+              type: text
+              label: PLUGIN_ADMIN.TITLE
+            content:
+              type: textarea
+              label: PLUGIN_ADMIN.CONTENT
+              size: large
+        lieferung:
+          type: tab
+          title: Lieferungs
+          fields:
+            header.form.fields.3.label:
+              type: text
+              label: Label
+              help: 'The label displayed'
+
+            header.form.fields.3.options:
+              type: array
+              label: Details zu den Veranstaltungsorten
+              placeholder_key: Optionstaste
+              placeholder_value: Beschreibung
+              help: 'Add or remove lieferungs'

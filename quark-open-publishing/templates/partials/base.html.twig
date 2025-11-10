@@ -127,7 +127,7 @@
 {#                    {% endif %}#}
                     {# display footer markdown page - hibbittsdesign.org #}
                     {% set content = pages.find('/footer').content %}
-                    {{ dump(content) }}
+
                     {% if content %}
                         {{ content|raw }}
                     {% endif %}
