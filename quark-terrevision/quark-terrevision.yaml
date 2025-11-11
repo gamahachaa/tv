@@ -4,5 +4,5 @@ streams:
             type: ReadOnlyStream
             prefixes:
                 '':
-                - themes://quark-terrevision
-                - themes://quarktv
+                - 'themes://quark-terrevision'
+                - 'themes://quarktv'
