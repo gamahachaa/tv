@@ -4,7 +4,7 @@ namespace Grav\Theme;
 use Grav\Common\Grav;
 use Grav\Common\Theme;
 
-class QuarkOpenPublishing extends Quark
+class QuarkTerrevision extends Quarktv
 {
 
     public static function getblogpageheroclasses()

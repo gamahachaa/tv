@@ -51,7 +51,7 @@ form:
       fields:
         general_info:
           type: tab
-          title: 'Open Publishing Options'
+          title: 'Terrevision Options'
           fields:
             chromelessoptions:
               type: section

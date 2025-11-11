@@ -5,4 +5,4 @@ streams:
             prefixes:
                 '':
                 - themes://quark-terrevision
-                - themes://quark
+                - themes://quarktv
